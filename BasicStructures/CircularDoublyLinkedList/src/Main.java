@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+        CircularDoublyLinkedList<Integer> list = new CircularDoublyLinkedList<>();
         list.add(1);
         list.add(2);
         list.add(3);
@@ -8,8 +8,8 @@ public class Main {
         list.add(5);
         list.add(6);
         list.printList();
-        list.search(10);
-        list.delete(3);
+        list.search(4);
+        list.delete(6);
         list.printList();
     }
 }
