@@ -1,7 +1,7 @@
-public class LinkedList<T> {
+public class SinglyLinkedList<T> {
     private Node<T> head;
 
-    public LinkedList() {
+    public SinglyLinkedList() {
         this.head = null;
     }
 
@@ -33,6 +33,22 @@ public class LinkedList<T> {
         System.out.println(current.data);
     }
 
+    //Metodo para buscar un elemento en la lista
+    //Method for search an element of the list
+    public boolean search(T data){
+        Node<T> current = head;
+        int cont = 0;
+        while(current != null) {
+            if(current.data.equals(data)){
+                System.out.println("The node found in the linked list: " + data);
+                System.out.println("Position: " + cont);
+                return true;
+            }
+            current = current.next;
+        }
+        System.out.printf("The node was not found in the linked list: " + data);
+        return false;
+    }
     //Metodo para remover un nodo de la lista
     //Method for delete a node of the list
     public void delete(T data) {
@@ -55,18 +71,4 @@ public class LinkedList<T> {
         }
     }
 
-    //Metodo para buscar un elemento en la lista
-    //Method for search an element of the list
-    public boolean search(T data){
-        Node<T> current = head;
-        while(current != null) {
-            if(current.data.equals(data)){
-                System.out.println("The node found in the linked list: " + data);
-                return true;
-            }
-            current = current.next;
-        }
-        System.out.printf("The node was not found in the linked list: " + data);
-        return false;
-    }
 }
